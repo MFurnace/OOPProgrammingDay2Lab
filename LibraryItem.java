@@ -1,23 +1,48 @@
-public class LibraryItem {
-    String name, autFName, autLName, publisher, IsAvail, IsNotAvail; 
-    char AudioBook, EBook;
-    int YearOfPub, NumOfPages;
-    
-
+public class LibraryItem implements Loanable{
+    String title, NameOfAut, publisher; 
+    int YearOfPub;
+        
     //Constructor
-    public LibraryItem (String name, String autFName, String autLName,String publisher, String isAvail, 
-    String isNotAvail, char audioBook, char eBook, int yearOfPub, int numOfPages) {
-        this.name = name;
-        this.autFName = autFName;
-        this.autLName = autLName;
+    public LibraryItem (String title,String NameOfAut, String publisher, int YearOfPub) {
+        this.title = title;
+        this.NameOfAut = NameOfAut;
         this.publisher = publisher;
-        this.IsAvail = isAvail;
-        this.IsNotAvail = isNotAvail;
-        this.AudioBook = audioBook;
-        this.EBook = eBook;
-        this.YearOfPub = yearOfPub;
-        this.NumOfPages = numOfPages;
+        this.YearOfPub = YearOfPub;
     }
 
-    
-}
+    //getters
+    public String gettitle(){
+        return this.title;
+    }
+    public String NameOfAut(){
+        return this.NameOfAut;
+    }
+    public String publisher(){
+        return this.publisher;
+    }
+    public int YearOfPub(){
+        return this.YearOfPub;
+    }
+    //setters
+
+    public void settitle(String title){
+        this.title = title;
+    }
+    public void setNameOfAut(String NameOfAut){
+        this.NameOfAut = NameOfAut;
+    }
+    public void setpublisher(String publisher){
+        this.publisher = publisher;
+    }
+    public void setYearOfPub(String yearOfPub){
+        this.YearOfPub = YearOfPub;
+    }
+    @Override
+    public boolean isLoanable() {
+        return true;
+    }
+    @Override
+    public int period(){
+        return 14;
+    }
+    }

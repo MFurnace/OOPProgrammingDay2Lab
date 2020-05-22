@@ -1,16 +1,28 @@
-public class Periodical extends LibraryItem{
+public class Periodical extends LibraryItem implements Loanable{
     //Class Properties
-    char Scholarly, Trade, Popular;
+    String Scholarly;
     
-
     //Constructor
-    public Periodical (String name, String autFName, String autLName,String publisher, char scholarly, char trade, char popular, 
-    String isAvail, String isNotAvail, char audioBook, char eBook, char referenceBook, char generalBook, int yearOfPub, int numOfPages) {
-    
-    super(name, autFName, autLName, publisher, isAvail, isNotAvail, audioBook, eBook, yearOfPub, numOfPages);
+    public Periodical (String title, String NameOfAut, String publisher, int YearOfPub, String Scholarly) {
+    super(title, NameOfAut, publisher, YearOfPub);
 
-    this.Scholarly = scholarly;
-    this.Trade = trade;
-    this.Popular = popular;
+    this.Scholarly = Scholarly;
 }
+    //Getter
+    public String getScholarly(){
+        return this.Scholarly;
+    }
+    //Setter
+    public void setScholarly(String Scholarly){
+        this.Scholarly = Scholarly;
+
+    }
+    @Override
+    public boolean isLoanable(){
+        return true;
+    }
+    @Override
+    public int period(){
+        return 14;
+    }
 }

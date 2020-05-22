@@ -1,16 +1,18 @@
-public class ReferenceBook extends LibraryItem{
+public class ReferenceBook extends Book{
     //class properties
-    char LangDict, Encyc, Bio, YearBook, Almanac;
+    private String Almanac;
 
-    public ReferenceBook (String name, String autFName, String autLName,String publisher, String isAvail, 
-    String isNotAvail, char audioBook, char eBook, char langDict, char encyc, char bio, 
-    char yearBook, char alamanac, int yearOfPub, int numOfPages){
-        super(name, autFName, autLName, publisher, isAvail, isNotAvail, audioBook, eBook,  yearOfPub, numOfPages);
+    public ReferenceBook (String title,String NameOfAut, String publisher, int YearOfPub, String Poetry, String Almanac) {
+        super(title, NameOfAut, publisher, YearOfPub, Poetry);
 
-            this.LangDict = langDict;
-            this.Encyc = encyc;
-            this.Bio = bio;
-            this.YearBook = yearBook;
-            this.Almanac = alamanac;
+            this.Almanac = Almanac;
+    }
+    //Getter
+    public String getAlmanac(){
+        return this.Almanac;
+    }
+    //Setter
+    public void setAlmanac(String Almanac){
+        this.Almanac = Almanac;
     }
 }

@@ -1,25 +1,28 @@
-public class Visual extends LibraryItem {
+public class Visual extends LibraryItem implements Audio {
     //Class properties
-    private String  videoTape, film;;
+    String  VideoTape, film;
 
     //Constructor 
-    public AudioVisual(String videoTape, String film) {
-        this.VideoTape = videoTape;
-        this.Film = film;
+    public Visual (String title, String NameOfAut, String AudioBook, String CompactDisk, String Mp3, 
+    String Record, String PolSpeech, String publisher, int yearOfPub, String VideoTape, String film) {
+
+        super(title, NameOfAut, publisher, yearOfPub);
+            this.VideoTape = VideoTape;
+            this.film = film;
     }
     //Getters
     public String getVideoTape(){
-        return videoTape;
+        return VideoTape;
     }
-    public String getFilm(){
+    public String getfilm(){
         return film;
     }
 
     //Setters
-    public void setVideoTape (String videotape){
-        this.VideoTape =videoTape;
+    public void setVideoTape (String Videotape){
+        this.VideoTape = VideoTape;
     }
-    public void setFilm (String film){
-        this.Film = film;
+    public void setfilm (String film){
+        this.film = film;
     }
 }

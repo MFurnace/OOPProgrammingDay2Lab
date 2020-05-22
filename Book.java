@@ -1,22 +1,21 @@
 public class Book extends LibraryItem {
     //Class Properties
-    char GenDrama, GenPoetry, GenProse, GenNonFic, GenMedia; 
+    private String Poetry; 
 
 
     //Constructor
-    public Book (String name, String autFName, String autLName,String publisher, String isAvail, 
-    String isNotAvail, char audioBook, char genDrama, char genPoetry, char genProse, char genNonFic, char genMedia, 
-    char eBook, int yearOfPub, int numOfPages){
-        super(name, autFName, autLName, publisher, isAvail, isNotAvail, audioBook, eBook, 
-        yearOfPub, numOfPages);
-        this.GenDrama = genDrama;
-        this.GenPoetry = genPoetry;
-        this.GenProse = genProse;
-        this.GenNonFic = genNonFic;
+    public Book (String title,String NameOfAut, String publisher, int YearOfPub, String Poetry) {
+        super(title, NameOfAut, publisher, YearOfPub);
+        this.Poetry = Poetry;
     }
+           
 
-    //Getters
-
-    //Setters
-
+    //Getter
+    public String getPoetry(){
+        return this.Poetry;
+    }
+    //Setter
+    public void setPoetry(String Poetry){
+        this.Poetry = Poetry;
+    }
 }

@@ -1,12 +1,19 @@
-public class Newspaper extends LibraryItem{// is this extends Periodical or abstract?
+public class Newspaper extends Periodical{// is this extends Periodical or abstract?
 
-    String VolNum;
+    private int VolNum;
 
-    public Newspaper (String name, String autFName, String autLName,String publisher, String volNum, String isAvail, 
-    String isNotAvail, char audioBook, char eBook, char referenceBook, char generalBook, int yearOfPub, int numOfPages) {
-    
-    super(name, autFName, autLName, publisher, isAvail, isNotAvail, audioBook, eBook, yearOfPub, numOfPages);
-    this.VolNum = volNum;
+    public Newspaper (String title, String NameOfAut, String publisher, int YearOfPub, String Scholarly, int VolNum) {
+       
+        super(title, NameOfAut, publisher, YearOfPub, Scholarly);
+            this.VolNum = VolNum;
     }
 
+    //Getter
+    public int getVolNum(){
+        return this.VolNum;
+    }
+    //Setter
+    public void setVolNum(int VolNum){
+        this.VolNum = VolNum;
+    }
 }
